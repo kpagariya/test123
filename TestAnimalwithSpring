@@ -1,0 +1,20 @@
+package springsession.impl;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
+public class TestAnimalWithSpring {
+	public static void main(String... args) {
+	ApplicationContext ctx= new ClassPathXmlApplicationContext("config.xml");
+	
+	// before spring -> AnimalBean b=new AnimalBean(new Dog()); 
+	AnimalNoise obj=(AnimalNoise) ctx.getBean("animalNoise");
+	obj.shout();
+	
+	AnimalNoise obj1=(AnimalNoise) ctx.getBean("animalNoise1");
+	obj.shout();
+	}
+	
+
+}
